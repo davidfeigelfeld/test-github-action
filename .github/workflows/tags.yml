@@ -15,5 +15,6 @@ jobs:
         run: |
           TAG=${GITHUB_REF#refs/tags/}
           echo ::set-output name=VERSION::${TAG}
+          echo $GITHUB_REF
       - name: Deploy
         run: echo "deploy version '${{ steps.version.outputs.VERSION }}'"
